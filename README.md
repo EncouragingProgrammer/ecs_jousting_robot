@@ -47,6 +47,76 @@ Initially, the servos didn’t work because the PCA9685 module needs its **own p
 
 Here’s a simple test program to check that your PCA9685 and servos are working properly. This code uses the **Adafruit PWM Servo Driver library**, which makes controlling the PCA9685 very easy.
 
+#### **Instructions to Download and Install Libraries**
+
+1. Visit the GitHub repositories for the required libraries:
+   - [Adafruit_PWMServoDriver](https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library/)
+   - [Adafruit_I2CDevice](https://github.com/adafruit/Adafruit_BusIO)
+
+2. Download each library as a ZIP file:
+   - Click the green **Code** button on the repository page.
+   - Select **Download ZIP**.
+
+3. Open the Arduino IDE and import the libraries:
+   - Go to **Sketch > Include Library > Add .ZIP Library...**.
+   - Navigate to the downloaded ZIP file for each library and click **Open**.
+
+4. Confirm the libraries are installed:
+   - Go to **Sketch > Include Library** , and ensure both `Adafruit_PWMServoDriver` and `Adafruit_I2CDevice` appear in the list.
+
+Now you are ready to proceed with testing.
+
+---
+
+---
+
+### Getting Started with Arduino Code
+
+When working with Arduino, every program (or "sketch") is built around two primary functions:
+
+#### 1. **`setup()` Function**
+
+- The `setup()` function runs **once** when the Arduino board is powered on or reset.
+- It is used to initialize variables, pin modes, libraries, and configurations that are needed before the main program starts.
+
+Example:
+
+```c++
+void setup() {
+  pinMode(13, OUTPUT);  // Set pin 13 as an output pin
+  Serial.begin(9600);   // Initialize the serial communication at 9600 baud rate
+}
+```
+
+In this example, pin 13 is configured as an output pin, and the serial communication is set up.
+
+#### 2. **`loop()` Function**
+
+- The `loop()` function contains the code that runs repeatedly after `setup()` has finished.
+- This is where the main logic of the program resides, and it runs continuously as long as the Arduino is powered.
+
+Example:
+
+```c++
+void loop() {
+  digitalWrite(13, HIGH);  // Turn on the LED connected to pin 13
+  delay(1000);             // Wait for 1 second
+  digitalWrite(13, LOW);   // Turn off the LED
+  delay(1000);             // Wait for 1 second
+}
+```
+
+This example continuously blinks an LED connected to pin 13 by turning it on and off with a 1-second delay.
+
+#### How `setup()` and `loop()` Work Together
+
+- The `setup()` function prepares everything your Arduino needs to start operating.
+- The `loop()` function takes over to keep the program running, performing tasks, responding to inputs, or controlling outputs in real-time.
+
+By structuring your Arduino code into these two sections, you ensure that your program runs efficiently and performs the desired tasks repeatedly or indefinitely.
+
+---
+
 #### **Code to Test PCA9685 and Servos**
 
 ```c++
