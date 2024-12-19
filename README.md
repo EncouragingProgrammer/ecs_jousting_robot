@@ -1,5 +1,7 @@
 # ECS Robotics Jousting Robot
 
+**IMPORTANT NOTE** - I have not yet successfully connected the PCA9685 to the Freenove hat included in the 4WD Arduino Car Kit. The 6-pin connector on the hat labeled "NC, TX, RX, GND, 5V, GND" does not align with the PCA9685's 6-pin configuration of "GND, OE, SCL, SDA, VCC, V+". I am currently investigating whether the TX and RX pins can be repurposed to connect to the PCA9685's SCL and SDA lines.
+
 ## Robotics Club Jousting Robot Tutorial
 
 Welcome, Robotics Club members! In this tutorial, we will look at some of the challenges you’ve faced with the Freenove 4WD car kits and the additional servo motors for your jousting robots. By the end of this guide, you will understand how to:
