@@ -1,6 +1,6 @@
 # ECS Robotics Jousting Robot
 
-**IMPORTANT NOTE** - I have not yet successfully connected the PCA9685 to the Freenove hat included in the 4WD Arduino Car Kit. The 6-pin connector on the hat labeled "NC, TX, RX, GND, 5V, GND" does not align with the PCA9685's 6-pin configuration of "GND, OE, SCL, SDA, VCC, V+". I am currently investigating whether the TX and RX pins can be repurposed to connect to the PCA9685's SCL and SDA lines.
+**IMPORTANT NOTE** - I have not yet successfully connected the PCA9685 to the Freenove hat included in the 4WD Arduino Car Kit. The 6-pin connector on the hat labeled "NC, TX, RX, GND, 5V, GND" does not align with the PCA9685's 6-pin configuration of "GND, OE, SCL, SDA, VCC, V+". I am currently investigating whether the TX and RX pins can be repurposed to connect to the PCA9685's SCL and SDA lines. Since the SCL and SDA use I2C (explained below), using the TX and RX pins would require a software I2C library such as: https://github.com/stevemarple/SoftWire
 
 ## Robotics Club Jousting Robot Tutorial
 
