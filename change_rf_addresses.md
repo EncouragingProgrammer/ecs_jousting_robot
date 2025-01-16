@@ -5,8 +5,9 @@
 ---
 
 #### **Materials Needed**:
-- A computer with Arduino IDE installed (version 1.8.X recommended).
+- A computer with Arduino IDE installed.
 - USB cables for connecting the car and remote control boards.
+    - NOTE: We had issues connecting to the car arduino boards using a USB-C to USB-C cable from a Mac computer. If you are having trouble connecting to the board (Board should light up), try a different cable, or different computer.
 - The project files:
   - `05.1_RF24_Remote_Controller.ino` (for the remote).
   - `05.5_One_Code_Multifunctional_RF24_Remote_Car.ino` (for the car).
@@ -25,11 +26,11 @@
    - Open the file `05.1_RF24_Remote_Controller.ino`.
    - Locate the line:
      ```cpp
-     const byte addresses[6] = "Free1";
+     const byte addresses[6] = "Free1"; // "Free1" may be different depending on what you've saved it to.
      ```
    - Change `"Free1"` to a unique name for the remote-car pair. Example:
      ```cpp
-     const byte addresses[6] = "PairA";
+     const byte addresses[6] = "PairA"; // Use a name that is 5 characters long
      ```
 
 4. **Upload the Remote Code**:
@@ -43,11 +44,11 @@
    - Open the file `05.5_One_Code_Multifunctional_RF24_Remote_Car.ino`.
    - Locate the same line:
      ```cpp
-     const byte addresses[6] = "Free1";
+     const byte addresses[6] = "Free1"; // "Free1" may be different depending on what you've saved it to.
      ```
    - Change `"Free1"` to match the name you used for the remote. For example:
      ```cpp
-     const byte addresses[6] = "PairA";
+     const byte addresses[6] = "PairA"; // Use a name that is 5 characters long
      ```
 
 7. **Upload the Car Code**:
@@ -64,7 +65,3 @@
 - Ensure the address string is exactly 5 characters long.
 - Each car-remote pair must have a unique address to avoid interference with other pairs.
 - Repeat these steps for each car-remote pair, ensuring each pair has a distinct address (e.g., `"PairB"`, `"Fire2"`, etc.).
-
----
-
-This process ensures smooth and conflict-free communication for all robot club projects.
